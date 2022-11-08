@@ -34,7 +34,6 @@ class WorkflowManager:
     WorkflowManager( placements )
 
     """
-
     def __init__(self, placements: pd.DataFrame):
         # arrange placements, locs, and extent
         assert isinstance(placements, pd.DataFrame)
@@ -46,7 +45,7 @@ class WorkflowManager:
             self.placements["lon"] = self.locs.lons
             self.placements["lat"] = self.locs.lats
             del self.placements["geom"]
-
+        
         assert "lon" in self.placements.columns
         assert "lat" in self.placements.columns
 
@@ -262,6 +261,11 @@ class WorkflowManager:
             real_lra = gk.raster.interpolateValues(
                 real_long_run_average, self.locs, mode=spatial_interpolation
             )
+            print('Hello world 5')
+            print(np.argwhere(np.isnan(real_lra)))
+            print(np.argwhere(real_lra <= 0))
+            self.nan = (np.argwhere(np.isnan(real_lra)))
+            
             assert not np.isnan(real_lra).any() and (real_lra > 0).all()
         else:
             real_lra = real_long_run_average

@@ -76,12 +76,12 @@ class MerraSource(NCSource):
     LONG_RUN_AVERAGE_WINDSPEED = join(
         dirname(__file__),
         "data",
-        "merra_average_windspeed_50m-shifted.tif")
+        "merra2_ws_long_run_average_20082017.tiff")
 
     LONG_RUN_AVERAGE_GHI = join(
         dirname(__file__),
         "data",
-        "merra_average_SWGDN_1994-2015_globe.tif")
+        "merra2_swgdn_long_run_average_20082017.tiff")
 
     MAX_LON_DIFFERENCE = 0.625
     MAX_LAT_DIFFERENCE = 0.5

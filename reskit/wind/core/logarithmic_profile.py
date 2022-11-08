@@ -406,7 +406,8 @@ cciCodeToRoughess[90] = 0.75  # Tree cover, mixed leaf type (broadleaved and nee
 cciCodeToRoughess[190] = 1.2  # Urban areas
 
 
-def roughness_from_land_cover_classification(classification, land_cover_type='clc'):
+def roughness_from_land_cover_classification(classification, land_cover_type):
+    #def roughness_from_land_cover_classification(classification, land_cover_type='clc'):
     """
     Estimates roughness value from land cover classifications
 
@@ -437,6 +438,9 @@ def roughness_from_land_cover_classification(classification, land_cover_type='cl
         roughness_from_land_cover_source(source, loc, land_cover_type)
 
     """
+    
+    print(land_cover_type)
+    
     if land_cover_type == 'clc':
         # fix no data values
         classification[classification < 0] = 44

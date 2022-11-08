@@ -124,6 +124,17 @@ class WindWorkflowManager(WorkflowManager):
             A reference to the invoking WindWorkflowManager
         """
         num = gk.raster.interpolateValues(path, self.locs, mode='near')
+        
+        #### TODO REMOVE
+        if (230 in num):
+            print("breakpoint")
+            print("index=")
+            print(np.where(num == 230))
+            idx = np.where(num == 230)[0][0]
+            print(self.locs)
+            print(self.locs[idx])
+            print(path)
+            
         self.placements['roughness'] = rk_wind_core.logarithmic_profile.roughness_from_land_cover_classification(
             num, source_type)
         return self
