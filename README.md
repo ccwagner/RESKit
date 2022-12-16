@@ -33,7 +33,7 @@ If, on the otherhand, you prefer an automated installation using Anaconda, then 
 1. First clone a local copy of the repository to your computer, and move into the created directory
 
 ```
-git clone https://github.com/FZJ-IEK3-VSA/reskit.git
+git clone https://github.com/ccwagner/RESKit.git
 cd reskit
 ```
 
